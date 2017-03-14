@@ -1,0 +1,262 @@
+/*
+ * PC#美容美发类设计
+ * 2017-03-11 17:01
+ */
+/* 设计规范：
+ * 1.字体大小：14px - 18px - 20px - 40px
+ * 2.字体颜色：#000000 - #333333 - #999999 - #ebba4d - #ffffff
+ * 3.背景颜色：#ebba4d - 88%↓
+ * 4.图标：SVG
+ * 5.按钮：button | button-link | button-fill | button-round
+ */
+
+@size-default: 14px;
+@size-middle: 18px;
+@size-normal: 20px;
+@size-large: 40px;
+
+@color-default: #333333;
+@color-light: #999999;
+@color-dark: #000000;
+@color-invert: #ffffff;
+@color-hover: #ebba4d;
+
+@bg-color: #ebba4d;
+@bg-color-hover: rgba(235,186,77,0.88);
+
+// icon
+
+// button
+.button {
+  display: block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  border: 0 none;
+  font-size: @size-default;
+  color: @color-hover;
+}
+.button-fill {
+  background-color: @bg-color;
+  color: @color-invert;
+  &:hover {
+    background-color: @bg-color-hover;
+    color: @color-invert;
+  }
+}
+.button-round {
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+}
+.button-link {
+  font-size: @size-middle;
+}
+
+// ul-list
+.list-unstyled { list-style: none;}
+.list-horizontal {
+  li { float: left;}
+}
+// p
+p {
+  margin: 10px 0;
+}
+.lead {
+  font-size: @size-middle;
+}
+
+.weekly-beautySalons {
+  font-size: @size-default;
+  text-align: center;
+
+  /* #pageHeader */
+  .page-header {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-color: #ffffff;
+    &-fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+  }
+  /* #pageMenu */
+  .page-menu {
+    ul {}
+    li {
+      display: inline-block;
+      float: none;
+      &.active a {
+        color: @color-hover;
+      }
+    }
+    a {
+      padding: 0 13px;
+      color: @color-dark;
+      &:hover {
+        color: @color-hover;
+      }
+    }
+  }
+  /* #pageLogo */
+  .page-logo {
+    width: 198px;
+    height: 189px;
+    margin: 250px auto 20px;
+    background: url("../img/logo.png") 0 0 no-repeat transparent;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-indent: -9999px;
+    }
+  }
+
+  /* #paegMain */
+  .page-main {
+
+    .title {
+      margin-bottom: 90px;
+      padding-top: 145px;
+      font-size: @size-large;
+    }
+    .sub-title {
+      font-size: @size-normal;
+    }
+  }
+  // .page-section
+  .page-section{
+    position: relative;
+    min-width: 1200px;
+    height: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .section01{
+    background: fixed url("../img/bg-section01.jpg") center center no-repeat transparent;
+    background-size: cover;
+
+    .button-icon {
+      width: 130px;
+      margin-top: 100px;
+      &:hover {
+        color: @color-hover;
+      }
+    }
+  }
+  .section02{
+    background: fixed url("../img/bg-section02.jpg") center center no-repeat transparent;
+    background-size: cover;
+  }
+  .section03{
+    height: 690px;
+    background-color: #fafafa;
+    color: @color-default;
+    ul {
+      width: 1200px;
+      margin: 0 auto 100px;
+    }
+    li {
+      width: 215px;
+      line-height: 1.75;
+      margin: 0 92px;
+    }
+    hr {
+      width: 40px;
+      height: 1px;
+      margin: 12px auto 22px;
+      border: 0 none;
+      background-color: @bg-color;
+    }
+  }
+  .section04{
+    height: 830px;
+    background: fixed url("../img/bg-section04.jpg") center center no-repeat transparent;
+    background-size: cover;
+    .title {
+      padding-top: 110px;
+      margin-bottom: 115px;
+    }
+    .content-about {
+      width: 1077px;
+      height: 404px;
+      margin: 0 auto;
+      padding-top: 80px;
+      background: url("../img/banner-about-us.jpg") right 0 no-repeat transparent;
+      text-align: left;
+      line-height: 1.75;
+      color: @color-default;
+    }
+    p {
+      width: 510px;
+      margin-bottom: 20px;
+    }
+  }
+  .section05{
+    width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+    ul {
+      width: 100%;
+    }
+    li {
+      width: 33.33%;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .section06{
+    height: 700px;
+    background: scroll url("../img/bg-section06.jpg") center center no-repeat transparent;
+    background-size: cover;
+    .title {
+      padding-top: 130px;
+      margin-bottom: 50px;
+    }
+    p {
+      font-style: italic;
+    }
+    .form {
+      width: 515px;
+      margin: 30px auto 10px;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+    .txt-input {
+      width: 230px;
+      height: 26px;
+      padding: 5px 10px;
+      border: 1px solid @color-hover;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    textarea.txt-input {
+      height: 122px;
+    }
+    .button {
+      margin-top: 10px;
+    }
+  }
+
+  /* #paegFooter */
+  .page-footer {
+    height: 150px;
+    padding-top: 50px;
+    background-color: #282b36;
+    color: @color-invert;
+    .icon-arrow-up {
+      display: block;
+      width: 33px;
+      height: 17px;
+      margin: 0 auto 40px;
+      background: url("../img/icon-arrow-up.png") 0 0 no-repeat transparent;
+    }
+  }
+}
